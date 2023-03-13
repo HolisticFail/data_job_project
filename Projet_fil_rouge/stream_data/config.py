@@ -22,4 +22,4 @@ TEAM_MEMBERS = [
     ),
 ]
 
-PROMOTION = "Promotion Continu Data Analyst - Juillet 2022"
+PROMOTION = "Promotion Continue Data Analyst - Juillet 2022"

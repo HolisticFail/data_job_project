@@ -42,7 +42,7 @@ def run():
         """
     )
     st.image(Image.open("data/it1_dt.png"))
-    st.image(Image.open("data/it1_dt_m.png"))
+    st.image(Image.open("data/hm_dt_it1.png"))
 
     st.markdown(
         """
@@ -50,14 +50,14 @@ def run():
         """
     )
     st.image(Image.open("data/it1_rf.png"))
-    st.image(Image.open("data/it1_rf_m.png"))
+    st.image(Image.open("data/hm_rf_it1.png"))
     
     st.markdown(
         """
         ### Conclusion itération 1 : 
 
-        Bien que les scores de précisions soit relativement élevé pour chaque modèle, nous pouvons constater au traver des matrices de confusion que certains de nos métiers cible ne sont pas correctement classés.
-        C'est fort de ce constat que nous avons décidé d'élargir et de revoir les critères sélectionnés pour la seconde itération. Nous nous sommes dès lors fixé comme objectif d'améliorer la classification des métiers : Data Engineer et MLObs.
+        Bien que les scores de précisions soient relativement élevés pour chaque modèle, nous pouvons constater au travers des matrices de confusion que certains de nos métiers cible ne sont pas correctement classés.
+        C'est fort de ce constat que nous avons décidé d'élargir et de revoir les critères sélectionnés pour la seconde itération. Nous nous sommes dès lors fixés comme objectif d'améliorer la classification des métiers : Data Engineer et MLObs.
         """
     )
     st.markdown(
@@ -67,7 +67,7 @@ def run():
         #### Périmètre d'analyse :
 
         Pour cette seconde itération, nous avons consulté les fiches métiers des Data Engineer et MLObs pour nous aider à sélectionner les colonnes du jeu de données qui correspondaient le plus à ces deux métiers.
-        Nous avons également fait le choix de ne sélectionner que des données catégorielles et avons élargis la plage de critère de 17 à 199.
+        Nous avons également fait le choix de ne sélectionner que des données catégorielles et avons élargis la plage de critères de 17 à 199.
 
         De plus, nous avons appliqué une stratégie sensiblement différente pour le préprocessing : 
         - Traitement des valeurs catégorielles manquantes : remplacer par 'no_reply'.
@@ -83,7 +83,7 @@ def run():
         """
     )
     st.image(Image.open("data/it2_dt.png"))
-    st.image(Image.open("data/it2_dt_m.png"))
+    st.image(Image.open("data/hm_dt_it2.png"))
 
     st.markdown(
         """
@@ -91,13 +91,13 @@ def run():
         """
     )
     st.image(Image.open("data/it2_rf.png"))
-    st.image(Image.open("data/it2_rf_m.png"))
+    st.image(Image.open("data/hm_rf_it2.png"))
     
     st.markdown(
         """
         ### Conclusion itération 2 : 
 
-        Nous constatons que l'ajout de nouveaux critères à permis aux modèles de gagner en précision (env. +5% vs la première itération).
+        Nous constatons que l'ajout de nouveaux critères a permis aux modèles de gagner en précision (env. +5% vs la première itération).
         Néanmoins, nous ne constatons qu'une faible progression dans la classification des métiers : Data Engineer et MLObs.
         Ci-après nous avons essayé de trouver des explications à ce problème de classification :
 
@@ -108,7 +108,7 @@ def run():
         - Il est également possible que les personnes qui ont participé à l'enquête occupent des postes sur lesquels ils réalisent aussi bien des tâches propres aux : 
         Data Analyst, Data Scientist, Data Engineer et Machine Learning Engineer.
 
-        - Une autre possibilité est également un enthousiasme trop prononcé dans les réponses aux questionnaires, c'est-à-dire, indiquer l'utilisation de 
+        - Une autre possibilité est également un enthousiasme trop prononcé dans les réponses aux questionnaires, c'est-à-dire indiquer l'utilisation de 
         tels ou tels logiciels ou compétences, car ils en ont connaissance et/ou l'ont déjà utilisé, sans que cela ne reflète strictement leurs activités journalières.
 
         - Enfin, il est bon de rappeler que Kaggle est une plateforme d'apprentissage et que les personnes qui visitent ce site le font avant tout pour se former. De ce fait, 
@@ -117,7 +117,7 @@ def run():
         ### :blue[Conclusion]
         Ces hypothèses nous amènent à penser que nous avons atteint un niveau de performance satisfaisant avec nos modèles de machine learning au regard des données à notre disposition. 
         Pour améliorer encore plus la classification, il faudrait envisager l’utilisation d’un nouveau jeu de données, qui cette fois-ci, s'appuierait par exemple sur des données provenant 
-        directement d'offres d'emploi propre à chacun des métiers cibles que nous avons étudiées.
+        directement d'offres d'emploi propres à chacun des métiers cibles que nous avons étudié.
         
         """
     )

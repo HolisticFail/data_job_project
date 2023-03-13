@@ -23,7 +23,7 @@ def run():
     La partie datavisualisation nous a permis de construire une cartographie des répondants et d’observer que même si les métiers de Data Analyst, Data Scientist, 
     Data Engineer et Machine Learning Engineer sont différents, ils partagent tous un tronc commun de compétences et d’utilisation de logiciels. 
 
-    Il nous est apparu clair assez rapidement, qu’une classification des 4 métiers ne serait probablement pas possible en utilisant uniquement quelques critères de différenciations. 
+    Il nous est apparu clair assez rapidement, qu’une classification des 4 métiers ne serait probablement pas possible en utilisant uniquement quelques critères de différenciation. 
     Hypothèse que nous avons pu confirmer lors de la première itération de machine learning. 
 
     La seconde itération quant à elle nous a amené à augmenter drastiquement le nombre de critères, en passant d’une dizaine de critères pour la première itération à deux cents pour la seconde.
@@ -35,7 +35,7 @@ def run():
 
     La piste la plus pertinente à explorer pour aller plus loin dans ce travail d’analyse et de classification, serait la consolidation des données par l’ajout de nouveaux critères. 
     Que ce soit par une évolution du questionnaire du site Kaggle.com qui s’appuierait cette fois-ci directement sur des fiches de postes des différents métiers de la data pour construire son enquête.
-    Ou directement par le scrapping d’offre d’emploi des métiers de la data pour être en mesure de construire le profil de ces métiers le plus précis possible.
+    Ou directement par le scrapping d’offres d’emploi des métiers de la data pour être en mesure de construire le profil de ces métiers le plus précis possible.
     Il serait ainsi possible de construire un modèle qui pourrait, au travers des critères retenus proposer une classification la plus précise possible. 
 
     ### Appréciation du projet fil rouge 

@@ -116,9 +116,9 @@ def run():
 
         Bien que le terme [Data Science](https://en.wikipedia.org/wiki/Data_science) commence à apparaitre vers le milieu des années 1970, il ne désignait pas encore la science de l'analyse des données,
           mais il se référait au développement informatique.
-        C'est au début des années 2000 que le terme Data Science, prend la signification qu'on lui connaît aujourd'hui. C'est avec cette observation, 
+        C'est au début des années 2000 que le terme Data Science prend la signification qu'on lui connaît aujourd'hui. C'est avec cette observation, 
         que nous avons décidé de nous intéresser à l'âge des répondants du sondage Kaggle.com, afin de constater ou non si les personnes qui travaillent dans 
-        la Data sont plutôt des personnes en tout début de carrière ou déjà en milieu fin de carrière professionnelle.
+        la Data sont plutôt des personnes en tout début de carrière ou déjà en milieu ou fin de carrière professionnelle.
              
        """
     )
@@ -128,7 +128,7 @@ def run():
     df = df.sort_values('country')
 
     #Création d'un graphique qui donne une représensation des âges des répondants au sondage
-    country_plot = diagramme_barre(df.country, custom_layer, "Répartition des répondants selon leur pays d'origine", 'Âge')
+    country_plot = diagramme_barre(df.country, custom_layer, "Répartition des répondants selon leur pays d'origine", 'Pays')
     st.pyplot(country_plot)
     st.markdown(
          """
@@ -145,7 +145,7 @@ def run():
     st.pyplot(age_plot)
 
     st.markdown(
-    """Nous pouvons constater qu'une majorité de répondants au sondage a entre 18 et 35 ans, ce qui les places dans la tranche début de carrière et début de milieu de carrière professionnelle."""
+    """Nous pouvons constater qu'une majorité de répondants au sondage a entre 18 et 35 ans, ce qui les place dans la tranche début de carrière et début de milieu de carrière professionnelle."""
         )
     
 
@@ -169,7 +169,7 @@ def run():
                             'I prefer not to answer' : 'no_information',
                             'No formal education past high school':'no_superior_degree'}}
     df.replace(diploma_dic, inplace = True)
-    diploma_plot = diagramme_barre_descending(df.diploma, custom_layer, 'Répartition des répondants selon leur diplômes', 'Diplômes')
+    diploma_plot = diagramme_barre_descending(df.diploma, custom_layer, 'Répartition des répondants selon leurs diplômes', 'Diplômes')
     st.pyplot(diploma_plot)
     
     st.markdown(
@@ -185,7 +185,7 @@ def run():
     # Répartition des diplômes en fonction des 3 métiers cible
     '''==> Focus sur 3 métiers de la data : Data Analyst, Data Engineer, Data Scientist :'''
 
-    #Crréation d'une fonction Répartition des diplômes en fonction des 4 métiers cible
+    #Création d'une fonction Répartition des diplômes en fonction des 4 métiers cible
     def job_diploma_plot(dataframe):
             top_diploma = df[df['diploma'].isin(["Bachelor","Doctorate", "Master"])]
             top_position = top_diploma[top_diploma['position'].isin(['Data Analyst','Data Engineer', 'Data Scientist', 'Machine Learning Engineer'])]
@@ -215,7 +215,7 @@ def run():
     
     st.markdown(
          """
-         Ce second graphique qui se concentre sur la répartition des diplômes en fonction de nos 4 métiers cibles, met en évidence que peu importe le métier, le diplôme le plus représenté est le Master (bac+5).
+         Ce second graphique qui se concentre sur la répartition des diplômes en fonction de nos 4 métiers cible, met en évidence que peu importe le métier, le diplôme le plus représenté est le Master (bac+5).
         
          """
     )
@@ -237,7 +237,7 @@ def run():
             #plt.rcParams["font.weight"] = "bold"
             expl = [0.1,0.1,0.2]
             plt.pie(x=rec_lp, labels = ['Python', 'SQL', 'R'],explode = expl,colors =['darkgoldenrod', 'chocolate', 'peru'], autopct = lambda x: str(round(x)) + '%',shadow = True)
-            plt.title('Top 3 des langages de programmation recommandé', fontsize=18,weight='bold')
+            plt.title('Top 3 des langages de programmation recommandés', fontsize=18,weight='bold')
             plt.show();
     pieplotprog = progpie(df)
     st.pyplot(pieplotprog)
@@ -256,7 +256,7 @@ def run():
          """
     )
 
-    #Création d'une fonction pour créer le graphique de répartion des top 3 langages aveec nos 4métiers
+    #Création d'une fonction pour créer le graphique de répartion des top 3 langages aveec nos 4 métiers
     def progbyjob(dataframe):
             # Répartition des 3 langages de programmation en fonction des 4 métiers cible
 
@@ -288,7 +288,7 @@ def run():
             plt.ylabel('Emplois',fontsize=16, weight = 'bold')
             plt.xticks(fontsize=12)
             plt.yticks(fontsize=12)
-            plt.title('Répartition du top 3 langage de programmation en fonction des 4 métiers cibles',fontsize=15,weight='bold');
+            plt.title('Répartition du top 3 langages de programmation en fonction des 4 métiers cibles',fontsize=15,weight='bold');
     plotprogbyjob = progbyjob(df)
     st.pyplot(plotprogbyjob)
 
@@ -303,7 +303,7 @@ def run():
          #### :blue[Salaire des répondants]
 
          Nous avons ensuite analysé le niveau de rémunération des répondants.
-         La colonne 'yearly_salary' est composé de 725 valeurs manquantes que nous avons décidé de remplacer par la valeur médiane de la colonne.
+         La colonne 'yearly_salary' est composée de 725 valeurs manquantes que nous avons décidé de remplacer par la valeur médiane de la colonne.
          """
     )
     #Création d'un dictionnaire pour les valeurs de la colonne salaire
@@ -378,22 +378,22 @@ def run():
             plt.ylabel('Emplois',fontsize=16, weight = 'bold')
             plt.xticks(fontsize=12)
             plt.yticks(fontsize=12)
-            plt.title('Répartition des salaires en fonction des 4 métiers cibles',fontsize=15,weight='bold');
+            plt.title('Répartition des salaires en fonction des 4 métiers cible',fontsize=15,weight='bold');
     plotsalry = salary(df)
     st.pyplot(plotsalry)
 
     st.markdown(
          """
          Nous pouvons observer une grande disparité dans les salaires quelque soit le métier cible. 
-         Cela s'explique par le fait que les répondants au sondage Kaggle.com ne sont pas tous issue du même pays. 
+         Cela s'explique par le fait que les répondants au sondage Kaggle.com ne sont pas tous issus du même pays. 
          Comme nous avions pu le constater dans le graphique du pays d'origine des répondants, un grand nombre d'entre eux vivent en Inde. 
-         Dans les prochains graphiques, nous nous intéresserons à la France pour retirer ses disparités.
+         Dans les prochains graphiques, nous nous intéresserons à la France pour retirer ces disparités.
          """
     )
 
     st.markdown(
          """
-         ### :blue[Répartitions des métiers ciblesen France]
+         ### :blue[Répartition des métiers cible en France]
          """
     )
     def jobinfr(dataframe):
@@ -427,7 +427,7 @@ def run():
             plt.ylabel('Pays',fontsize=16, weight = 'bold')
             plt.xticks(fontsize=12)
             plt.yticks(fontsize=12)
-            plt.title('Répartition des 4 métiers cibles en France',fontsize=15,weight='bold');
+            plt.title('Répartition des 4 métiers cible en France',fontsize=15,weight='bold');
     jobfr = jobinfr(df)
     st.pyplot(jobfr)
 
@@ -442,51 +442,27 @@ def run():
          """
     )
     def salfr(dataframe):
-# Répartition des 3 métiers cible en France
+# Répartition des 3 métiers cible en France par salaire
 
             only_france = df[df['country'].isin(['France'])]
             top_position_france = only_france[only_france['position'].isin(['Data Analyst','Data Engineer', 'Data Scientist','Machine Learning Engineer'])]
-            table = top_position_france.groupby(['position', 'yearly_salary']).size().reset_index().pivot(columns='position', index='yearly_salary', values=0)
-            plt.style.use('ggplot')
-                
-            ax=table.plot(stacked=True,kind='barh',figsize=(12,10),alpha=0.7)
-
-            index_list = table.index.values
-            total = table.values.sum()
-
-            #ploting the annotation text
-            for i in table.index :
-                tot_x = 0
-                for j in table.columns:
-                    
-                    ratio = (table.loc[(i)][j])/ total
-                    x_pos = table.loc[(i)][j]+ tot_x
-                    tot_x += table.loc[(i)][j]
-                    if(ratio >= 0.001):
-                        plt.text(x = x_pos - table.loc[(i)][j]/2, y = np.where(index_list == i)[0][0]
-                                ,s= '%.1f'%(ratio*100)+'%' ,va='center', ha='center', size=10)
-
-            #Decorating the plot
-            plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left',prop={'size': 14})
-            plt.xlabel('Effectifs',fontsize=16, weight = 'bold')
-            plt.ylabel('Pays',fontsize=16, weight = 'bold')
-            plt.xticks(fontsize=12)
-            plt.yticks(fontsize=12)
-            plt.title('Répartition des 4 métiers cibles en France',fontsize=15,weight='bold');
+            sns.boxplot(x = top_position_france.position, y=top_position_france.yearly_salary)
     salary_france = salfr(df)
     st.pyplot(salary_france)
 
+
     st.markdown(
          """
-         Nous pouvons constater que la plage des salaires commence à 500€ et culmine à 400k€. Une grande majorité des répondants est concentrée entre 17k€ et 65k€.
-         Nous observons néanmoins que les salaires les plus hauts ne semblent concerner qu'exclusivement les Data Scientists. Comme nous avions pu l'observer sur le graphique précédent, 
-         ceux-ci sont surreprésentés en France. 
+         Nous avons fait le choix des boxplot pour rendre compte des salaires annuels pour les métiers de la data en France.  
+         Nous constatons que les métiers Data Scientist, Data Engineer et MLObs se concentrent autour des 50K€/an et que les Data Scientist et MLObs partagent une valeur médiane commune. 
+         Seuls les MLObs ne présentent pas de valeurs extrêmes pour leur salaire annuel.  
+         A la lecture de ce graphique, nous pouvons émettre l'hypothèse que pour avoir les salaires les plus hauts il vaut mieux s'orienter vers le métier de Data Scientist, plutôt que celui de Data Analyst.
          """
     )
 
     st.markdown(
          """
-         ### :blue[Répartitions des 4 métiers cibles en fonction du genre en France]
+         ### :blue[Répartition des 4 métiers cible en fonction du genre en France]
          """
     )
 
@@ -522,7 +498,7 @@ def run():
             plt.ylabel('Emplois',fontsize=16, weight = 'bold')
             plt.xticks(fontsize=12)
             plt.yticks(fontsize=12)
-            plt.title('Répartition des 4 métiers cibles en fonction du genre en France',fontsize=15,weight='bold');
+            plt.title('Répartition des 4 métiers cible en fonction du genre en France',fontsize=15,weight='bold');
     genrejobfr = genrefr(df)
     st.pyplot(genrejobfr)
 
@@ -534,17 +510,17 @@ def run():
 
     st.markdown(
          """
-         ## Profil de la personne qui travaillent dans la data !
+         ## Profil de la personne qui travaille dans la data !
 
          Comme analysés tout au long de cette page, nous sommes en mesure d'établir un profil type de la personne qui travaille dans le domaine de la data grâce à l'enquête réalisée par le site Kaggle.com.
 
          Il s'agit donc dans une majorité des cas d'un homme qui a entre 18 et 35 ans et qui possède un Master ou un Bachelor et qui a pour habitude d'utiliser 
-         les langages de programmation suivant : Python, SQL et R. 
+         les langages de programmation suivants : Python, SQL et R. 
 
          ### :blue[Conclusion]
 
-         Le portrait que nous avons dressé ce base sur quelques critères du jeu de données qui était à notre disposition pour ce projet fil rouge. Et est un profil simplifié de ce qui est attendu pour 
-         les gens qui travaillent dans la data. Néanmoins, ce profil ne permet pas d'identifier rapidement si la personne est un Data Analyst, un Data Scientist, un Data Engineer ou un MLObs.
+         Le portrait que nous avons dressé se base sur quelques critères du jeu de données qui était à notre disposition pour ce projet fil rouge. Et est un profil simplifié de ce qui est attendu pour 
+         les personnes qui travaillent dans la data. Néanmoins, ce profil ne permet pas d'identifier rapidement si la personne est un Data Analyst, un Data Scientist, un Data Engineer ou un MLObs.
          Dans la page suivante, nous allons essayer au travers du machine learning de réaliser un algorithme de classification et ainsi vérifier si 
          le jeu de données dispose de suffisamment d'éléments différentiant pour classer nos 4 métiers cible.
          """
