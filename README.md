@@ -10,3 +10,5 @@ Au travers du jeu de données, nous avons essayé d'identifier le profil des per
 
 Un streramlit app est disponible afin de rendre compte de nos observations ainsi que pour présenter nos modèles de classification de machine learning. 
 
+Au sein du dossier Projet fil rouge, vous trouverez l'ensemble de nos analyses. Un rapport écrit de l'ensemble du projet est également à votre disposition, qui décrit pas à pas les différentes étapes de notre projet.
+
