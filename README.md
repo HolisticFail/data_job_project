@@ -1,4 +1,4 @@
-##Projet Data Job : identification du profil des personnes qui travaillent dans la data.
+## Projet Data Job : identification du profil des personnes qui travaillent dans la data.
 
 Ce projet a été réalisé dans le cadre de la formation Data Analyst proposée par le site de formation Datascientest. Il a été mené conjointement par Nejib Bousserghine et Monya Mokadem.
 
